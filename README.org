@@ -10,6 +10,8 @@ The conversion uses an NPN transistor; as far as I understand it on receiving th
 #+attr_org: :width 300
 [[file:./images/re-20-mod-schematic.png][file:images/re-20-mod-schematic.png]]
 
+This document explains how I modded my pedal, I'm not suggesting that you should do this.
+
 I implemented it using a switching mono jack socket and a 2N2222A transistor, because that's what I had.
 
 #+caption: Acrobatic leg bending
@@ -94,7 +96,7 @@ I found this slightly tricky because I didn't remove the panel that needed drill
 
 I started with a 2mm drill bit, but wasn't making much progress, so switched to a step drill bit and went to a 5mm hole with that. I used a reamer to enlarge the hole till the socket fit.
 
-I ended up with a lip of metal around the hole on the inside of the case, but couldn't work out a way to remove it without removing the panel. This would probably have been a more sensible way to approach drilling the hole.
+I ended up with a lip of metal around the hole on the inside of the case, but couldn't work out a way to remove it without removing the panel. This would probably have been a more sensible way to approach drilling the hole, but I didn't do this and ended up leaving the lip.
 
 The hole in the metal panel that sits between the jacks and the case was too small to fit the back of the socket so I used a file to enlarge the hole until it fitted and the socket protruded a bit further from the case.
 
