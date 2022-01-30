@@ -1,0 +1,118 @@
+#+TITLE: Boss RE-20 CV Tempo Mod
+
+I stumbled on an interesting Mod Wiggler thread, [[https://modwiggler.com/forum/viewtopic.php?t=62688][mod a Boss RE-20 to accept cv for tempo sync?]]. It references a [[https://doepfer.de/faq/gen_faq.htm#S-Trig][simple method for converting a CV Gate signal to S-Trigger]] and shows how to connect this signal to the RE-20's tap tempo to set the delay tempo.
+
+[[https://www.youtube.com/watch?v=V8K0mBDjtSY][This video]] show it in action, and here's another video that discusses [[https://www.youtube.com/watch?v=EpZPOFYxfFE][making a CV-Gate to S-Trigger cable]].
+
+The conversion uses an NPN transistor; as far as I understand it on receiving the gate on voltage the transistor moves into saturation so shorting the collector and emitter, giving us the S-Trigger.
+
+#+caption: The schematic is simple
+#+attr_org: :width 300
+[[file:./images/re-20-mod-schematic.png][file:images/re-20-mod-schematic.png]]
+
+I implemented it using a switching mono jack socket and a 2N2222A transistor, because that's what I had.
+
+#+caption: Acrobatic leg bending
+#+attr_org: :width 300
+[[file:./images/01-mod.jpg][file:images/01-mod.jpg]]
+
+I don't have an oscilloscope, so I tried monitoring the gate voltage output from my Korg SQ-1 with a multimeter. It seems to be sending around 13V (manual says 10V) for the duration of the gate on.
+
+[[https://youtu.be/X7dw3OU5N8s][Korg SQ 1 CV Gate measured with a multimeter]]
+
+I connected the converter and used the multimeter continuity tester to confirm that the signal was shorting with the gate on.
+
+[[https://youtu.be/fiUpujtpZ9E][Korg SQ-1 CV Gate converted to S Trigger, measured with a multimeter]]
+
+Then I panicked about damaging my RE-20 for a good while, before unscrewing the case and taking a look.
+
+#+attr_org: :width 300
+[[file:./images/02-pedal.jpg][file:images/02-pedal.jpg]]
+
+#+attr_org: :width 300
+[[file:./images/03-pedal-base.jpg][file:images/03-pedal-base.jpg]]
+
+#+attr_org: :width 300
+[[file:./images/04-pedal-base-off.jpg][file:images/04-pedal-base-off.jpg]]
+
+The pedal power socket is pretty nifty, it slides into place so was easy to move out of the way.
+
+#+caption: The power socket in place
+#+attr_org: :width 300
+[[file:./images/05-power-socket-01.jpg][file:images/05-power-socket-01.jpg]]
+
+#+caption: The power socket moved out of the way
+#+attr_org: :width 300
+[[file:./images/06-power-socket-02.jpg][file:images/06-power-socket-02.jpg]]
+
+#+caption: You'll need to remove the nuts from the jack sockets
+#+attr_org: :width 300
+[[file:./images/08-pedal-jacks-02.jpg][file:images/08-pedal-jacks-02.jpg]]
+
+As mentioned by =jny303= on the Mod Wiggler thread, there's an existing hole in the case that we can use for the new socket. More on this later.
+
+#+caption: A hole
+#+attr_org: :width 300
+[[file:./images/09-hole.jpg][file:images/09-hole.jpg]]
+
+#+attr_org: :width 300
+[[file:./images/10-pcb-01.jpg][file:images/10-pcb-01.jpg]]
+
+After unscrewing the top PCB We can push the jack sockets through their holes to move it.
+
+#+attr_org: :width 300
+[[file:./images/11-pcb-02.jpg][file:images/11-pcb-02.jpg]]
+
+This reveals a plastic sheet covering the PCB that we need to get to. The metal panel that sits between the jack sockets and the case is sitting on the plastic sheet in the picture.
+
+#+attr_org: :width 300
+[[file:./images/12-pcb-03.jpg][file:images/12-pcb-03.jpg]]
+
+With the sheet pulled out of the way we can see the points that we need to connect to.
+
+#+attr_org: :width 300
+[[file:./images/13-pcb-04.jpg][file:images/13-pcb-04.jpg]]
+
+I added a bit of extra solder on to each and then attached the wires from the socket.
+
+#+attr_org: :width 300
+[[file:./images/14-pcb-05.jpg][file:images/14-pcb-05.jpg]]
+
+With that done we can replace the top PCB. Don't forget the metal plate between the jacks and the case, says bitter experience.
+
+#+attr_org: :width 300
+[[file:./images/15-reassembly-01.jpg][file:images/15-reassembly-01.jpg]]
+
+#+attr_org: :width 300
+[[file:./images/16-reassembly-02.jpg][file:images/16-reassembly-02.jpg]]
+
+With this done I was able to test the mod.
+
+It all worked as expected until the usb power bank I was using to power the RE-20 went to sleep. After eventually discovering the reason for the pedal suddenly switching off I moved on to feeling relieved I hadn't broken it and installing the socket in the case.
+
+I found this slightly tricky because I didn't remove the panel that needed drilled, and access to panel is limited by the cutout shown above. I wanted the hole for the new socket to be towards the bottom of the cutout, giving me space away from the PCB.
+
+I started with a 2mm drill bit, but wasn't making much progress, so switched to a step drill bit and went to a 5mm hole with that. I used a reamer to enlarge the hole till the socket fit.
+
+I ended up with a lip of metal around the hole on the inside of the case, but couldn't work out a way to remove it without removing the panel. This would probably have been a more sensible way to approach drilling the hole.
+
+The hole in the metal panel that sits between the jacks and the case was too small to fit the back of the socket so I used a file to enlarge the hole until it fitted and the socket protruded a bit further from the case.
+
+#+attr_org: :width 300
+[[file:./images/17-reassembly-03.jpg][file:images/17-reassembly-03.jpg]]
+
+#+attr_org: :width 300
+[[file:./images/18-reassembly-04.jpg][file:images/18-reassembly-04.jpg]]
+
+#+attr_org: :width 300
+[[file:./images/19-reassembly-05.jpg][file:images/19-reassembly-05.jpg]]
+
+Then I used pliers to add to the back plate scratches I'd made drilling the hole with some more whilst trying to tighten the nut.
+
+#+attr_org: :width 300
+[[file:./images/20-socket-01.jpg][file:images/20-socket-01.jpg]]
+
+#+attr_org: :width 300
+[[file:./images/21-socket-02.jpg][file:images/21-socket-02.jpg]]
+
+With that all done it [[https://youtu.be/BH2T6iLpa_I][works nicely]].
